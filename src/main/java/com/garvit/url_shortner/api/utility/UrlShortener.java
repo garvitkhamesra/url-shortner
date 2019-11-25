@@ -22,7 +22,6 @@ public class UrlShortener {
     static final Map<String, Url> longToShortMap = new HashMap<>();
     static int counter = 1000;
 
-    @Throttling(type = ThrottlingType.RemoteAddr, limit = 1, timeUnit = TimeUnit.SECONDS)
     public String encode(String longUrl) {
         if (longToShortMap.containsKey(longUrl)) {
             if (longToShortMap.get(longUrl).getExpiry().isBefore(LocalDateTime.now())) {

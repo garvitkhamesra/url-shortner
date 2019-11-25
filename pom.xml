@@ -51,12 +51,10 @@
             <artifactId>jjwt</artifactId>
             <version>0.9.1</version>
         </dependency>
-
         <dependency>
-            <groupId>com.weddini.throttling</groupId>
-            <artifactId>spring-boot-throttling-starter</artifactId>
+            <groupId>com.google.guava</groupId>
+            <artifactId>guava</artifactId>
         </dependency>
-
     </dependencies>
 
     <build>
