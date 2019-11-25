@@ -1,0 +1,23 @@
+// Url Shortner
+curl -X POST \
+  https://polar-coast-92878.herokuapp.com/shortener \
+  -H 'Authorization: eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJ0ZXN0IiwiZXhwIjoxNTc1MTAwNDQzLCJpYXQiOjE1NzQ2Njg0NDN9.zEqfskNZRzCcQdoBANxj7buxFR3rlMhwBlcHSj75UsVIuFg6qOUwgzg7jcOjjNBXzD5z7UjhnDaIL1aE9djQmA' \
+  -H 'Content-Type: application/json' \
+  -d '{
+	"url": "https://howtodoinjava.com/java/date-time/compare-localdatetime/"
+}'
+
+// Redirection
+curl -X GET \
+  https://polar-coast-92878.herokuapp.com/qi \
+  -H 'Authorization: eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJ0ZXN0IiwiZXhwIjoxNTc1MTAwNDQzLCJpYXQiOjE1NzQ2Njg0NDN9.zEqfskNZRzCcQdoBANxj7buxFR3rlMhwBlcHSj75UsVIuFg6qOUwgzg7jcOjjNBXzD5z7UjhnDaIL1aE9djQmA' \
+
+
+// Authentication
+curl -X POST \
+  https://polar-coast-92878.herokuapp.com/authenticate \
+  -H 'Content-Type: application/json' \
+  -d '{
+	"username": "test",
+	"password": "test"
+}'
