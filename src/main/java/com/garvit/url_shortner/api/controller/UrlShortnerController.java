@@ -24,7 +24,6 @@ public class UrlShortnerController {
     @Autowired
     private UrlConverterService urlConverterService;
 
-    @CrossOrigin(origins = "https://afternoon-cove-84836.herokuapp.com/")
     @PostMapping(value = "/shortener")
     public ResponseEntity shortenUrl(@RequestBody UrlShortenRequest shortenRequest, HttpServletRequest request) {
         log.info("Received url to shorten:  {}", shortenRequest.getUrl());
