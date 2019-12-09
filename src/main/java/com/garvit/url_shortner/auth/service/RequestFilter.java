@@ -39,8 +39,6 @@ public class RequestFilter extends OncePerRequestFilter {
     protected void doFilterInternal(HttpServletRequest request, HttpServletResponse response, FilterChain chain)
             throws ServletException, IOException {
         log.info("request {}", request.getHeader("Authorization"));
-        log.info("request {}", request.getHeader("authorization"));
-
         final String requestTokenHeader = request.getHeader("Authorization");
         String username = null;
         String jwtToken = null;

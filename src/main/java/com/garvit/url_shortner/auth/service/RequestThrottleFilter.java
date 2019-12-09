@@ -3,7 +3,6 @@ package com.garvit.url_shortner.auth.service;
 import com.google.common.cache.CacheBuilder;
 import com.google.common.cache.CacheLoader;
 import com.google.common.cache.LoadingCache;
-import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
 
@@ -19,7 +18,6 @@ import java.util.concurrent.TimeUnit;
  * Package: com.garvit.url_shortner.auth.service
  */
 
-@Slf4j
 @Component
 public class RequestThrottleFilter implements Filter {
 
@@ -48,8 +46,6 @@ public class RequestThrottleFilter implements Filter {
             throws IOException, ServletException {
         HttpServletRequest httpServletRequest = (HttpServletRequest) servletRequest;
         HttpServletResponse httpServletResponse = (HttpServletResponse) servletResponse;
-        log.info("request 1{}", httpServletRequest.getHeader("Authorization"));
-        log.info("request1 {}", httpServletRequest.getHeader("authorization"));
         String clientIpAddress = getClientIP((HttpServletRequest) servletRequest);
         if(isMaximumRequestsPerSecondExceeded(clientIpAddress))
             httpServletResponse.sendError(429,"Too many requests");
