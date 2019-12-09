@@ -39,6 +39,8 @@ public class RequestFilter extends OncePerRequestFilter {
     @CrossOrigin
     protected void doFilterInternal(HttpServletRequest request, HttpServletResponse response, FilterChain chain)
             throws ServletException, IOException {
+        log.info("request {}", request.getHeader("token"));
+        final String requestTokenHeader = request.getHeader("token");
         response.setHeader("Access-Control-Allow-Origin", "*");
         response.setHeader("Access-Control-Allow-Methods", "GET,POST,DELETE,PUT,OPTIONS");
         response.setHeader("Access-Control-Allow-Headers", "*");
