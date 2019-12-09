@@ -48,8 +48,8 @@ public class RequestThrottleFilter implements Filter {
             throws IOException, ServletException {
         HttpServletRequest httpServletRequest = (HttpServletRequest) servletRequest;
         HttpServletResponse httpServletResponse = (HttpServletResponse) servletResponse;
-        log.info("request {}", httpServletRequest.getHeader("Authorization"));
-        log.info("request {}", httpServletRequest.getHeader("authorization"));
+        log.info("request 1{}", httpServletRequest.getHeader("Authorization"));
+        log.info("request1 {}", httpServletRequest.getHeader("authorization"));
         String clientIpAddress = getClientIP((HttpServletRequest) servletRequest);
         if(isMaximumRequestsPerSecondExceeded(clientIpAddress))
             httpServletResponse.sendError(429,"Too many requests");
