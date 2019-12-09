@@ -24,6 +24,7 @@ public class UrlShortnerController {
     @Autowired
     private UrlConverterService urlConverterService;
 
+    @CrossOrigin(origins = "http://localhost:3000", allowCredentials = "true")
     @PostMapping(value = "/shortener")
     public ResponseEntity shortenUrl(@RequestBody UrlShortenRequest shortenRequest, HttpServletRequest request) {
         log.info("Received url to shorten:  {}", shortenRequest.getUrl());
